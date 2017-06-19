@@ -370,7 +370,7 @@ $publishednews = $newsarticles->getAllPublishedArticles(2);
 
 <p class="text" ><?php echo makeAShortSummary( $client_testi[$i]->message ) ; ?></p><br />
 
-<span class="testi-owner" >- <?php  $name = $account->getUserAccountById( $client_testi[$i]->userID ) ;  echo $name[0]->fullname . " , " . $name[0]->occupation . " / "  . $name[0]->company ; ?> </span>
+<span class="testi-owner" >- <?php  $name = $account->getUserAccountById( $client_testi[$i]->userID ) ;  echo $name[0]->fullname . ", " . "CEO" . "/"  . $name[0]->company ; ?> </span>
 
 <div class= "linerule" ></div>
 

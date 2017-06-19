@@ -11,15 +11,16 @@ class database
   var $username = '' ;
   var $password = '' ;
   var $databasename = '' ;
-
   /**
    * connect to the database
    */
   function database( $host = '' , $username = '' , $password = '' , $databasename = '' )
   {
-    $this->conn = mysql_connect( $host , $username , $password );
+    global $conn;
+    $this->conn = mysqli_connect( $host , $username , $password );
+    $conn = $this->conn;
     if ( !$this->conn ) die('Cannot connect to database. ');
-    $db = mysql_select_db( $databasename , $this->conn );
+    $db = mysqli_select_db($this->conn, $databasename);
     if ( !$db ) die( $this->error() );
     return $this->conn;
   }
@@ -37,9 +38,10 @@ class database
    */
   function query( $sql )
   {
+    global $conn;
     if ( $sql != '' )
     {
-      $this->query_result = mysql_query( $sql  );
+      $this->query_result = mysqli_query($conn, $sql);
       if ( !$this->query_result )
       {
         //die( $this->error() );
@@ -83,7 +85,7 @@ class database
   function fetchobject( $resourceid = 0 )
   {
     if ( !$resourceid ) $resourceid = $this->query_result;
-    $this->row = mysql_fetch_object( $resourceid );
+    $this->row = mysqli_fetch_object( $resourceid );
     return $this->row;
   }
 
@@ -104,7 +106,7 @@ class database
   function freeresult( $result = 0 )
   {
     if ( !$result ) $result = $this->query_result;
-    mysql_free_result( $result );
+    mysqli_free_result( $result );
   }
 
   /**
@@ -113,7 +115,7 @@ class database
   function getnumrows( $result = 0 )
   {
     if ( !$result ) $result = $this->query_result;
-    return mysql_num_rows( $result );
+    return mysqli_num_rows( $result );
   }
 
   function close() {
