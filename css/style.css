@@ -1,0 +1,909 @@
+/* CSS Document */
+
+* {
+	margin: 0px;
+	padding : 0px ;
+}
+
+a , a:visited
+{
+}
+
+.link01
+{
+	color:#621B15 ;	
+	font:bold 13px Arial, Helvetica, sans-serif ;
+
+}
+a.readmore {
+	background:url(../images/link-icon_11.jpg) 0 0 no-repeat;
+	height:19px;
+	padding-left:15px;
+	color:#000;
+	text-decoration:none;
+	font:bold 12px Arial, Helvetica, sans-serif;
+}
+
+a.readmore:hover{
+	background:#621B15 ;
+	color:#fff;
+}
+
+body {
+	background:#FEFEEF url(../images/h1-bg.jpg) 0 0 repeat-x ;
+	height: 153px ;
+	font:normal 14px Arial, Helvetica, sans-serif;
+	line-height:1.7em ;
+	word-spacing:1px;
+	text-align:justify ;
+}
+
+ul li , ol li
+{
+	list-style-position:inside ;
+}
+
+/* layout */
+#header {
+	background:url(../images/header_03.jpg) 0px 0px no-repeat ;
+	width: 460px ;
+	height: 70px ;
+	position:relative;
+	text-align:center;
+	top:46px ;
+}
+
+#slogan
+{
+	position:absolute;
+	left: 277px;
+	top: 55px;
+	color:#333 ;
+	font:normal 17px Arial, Helvetica, sans-serif;
+}
+
+#header span , #testimonials h1 span , #welcome h1 span , #why h1 span ,
+	#news h1 span , #login h1 span , #extra h1 span , #advantages h1 span
+{
+	display:none ;
+}
+
+#container 
+{
+	width: 768px ;
+	position: relative ;
+	padding-bottom:1px;
+	margin: 0 auto ;
+}
+
+#wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 768px ;
+}
+
+#userlog {
+	margin-left:2px; 
+	border:1px solid #ccc; 
+	padding-left:10px;
+	background:#FCF9D8 ;
+}
+
+#userlog ul {
+	list-style:none;
+	text-align: left;
+}
+
+#userlog ul li a{
+	background:url(../images/list-off.gif) left center no-repeat;
+	padding-left:10px ;
+	text-decoration:none;
+	color:#868686;
+	font-size:17px;
+}
+
+#userlog ul li a:hover {
+	background:url(../images/list-on.gif) left center no-repeat;
+	text-decoration:underline;
+	color:#000;
+}
+
+#topnav {
+	margin-top:-65px;
+	width:400px;
+	margin-left:400px ; /* comment dis jst to display 4 menus*/
+	position:absolute;
+	/*border:1px solid red ;*/
+}
+
+#topnav li{
+	float:left;
+	display:block;
+	/*width:160px;*/
+}
+#topnav li a {
+	padding-left : 20px;
+	padding-right : 20px;
+	/*display:block ;*/
+	text-decoration:none;	
+	color:#C0C583 ;
+	border-left: 5px solid #C0C583 ;
+}
+
+#topnav li a:hover {
+	color:#fff ;	
+	/*background:#fff ;*/
+	/*text-decoration:underline;*/
+	border-left:5px solid #fff ;
+	
+}
+
+#topnav li a.active {
+	color:#fff ;
+	width:160px;
+	border-left:5px solid #fff ;
+	text-decoration:underline ;
+}
+
+#nav {
+	height: 28px;
+	margin-top: 48px;
+	list-style: none;
+}
+
+#nav li {
+	float:left ;
+	overflow: hidden ;
+	position:relative;
+	margin:0;
+	padding:0;
+	display:block;
+}
+
+#nav li a {
+	display: block ;
+	line-height:28px;
+	margin-right: 1px ;
+	overflow: hidden;
+	border-right:1px solid #C0C583 ;
+	text-indent: -5000px;
+	height: 34px;
+	background-position: 50% -70px;
+}
+
+#cmdhome {
+	width:64px;
+	background:url(../images/nav-home.jpg) no-repeat ;
+	
+}
+
+#cmdabout {
+	width: 77px;
+	background:url(../images/nav-aboutus_08.jpg) no-repeat ;
+}
+#cmdhipaa {
+	width:63px;
+	background:url(../images/nav-hipaa_10.jpg) no-repeat ;
+}
+#cmdfreetrial {
+	width:88px;
+	background:url(../images/nav-freetrial_12.jpg) no-repeat ;
+}
+#cmdcontact {
+	width:101px;
+	background:url(../images/nav-contact_14.jpg) no-repeat;
+}
+#cmdmt {
+	width:156px;
+	background:url(../images/nav-mt_16.jpg) no-repeat ;
+}
+#cmdrequest {
+	width: 112px;
+	background:url(../images/nav-request_18.jpg) no-repeat ;
+}
+#nav li a:hover {
+	background-position: 50% -35px;
+	margin-right:1px ;
+}
+
+#nav li a.cmddefault {
+	background-position: center top ;	
+	margin-right:1px ;
+}
+
+#column
+{
+	padding-top:15px; 
+}
+
+#column1 {
+	width: 283px ;
+	float: left ;
+	margin-top:10px; 
+}
+
+.request-info-image
+{
+	background:url(../images/mt-pic_03.jpg) 0 5px no-repeat ;
+	height:275px ;
+	margin-top:10px;
+}
+
+#notregister {
+	width:250px;
+	background:#B3C631 ;
+	color:#fff;
+	margin-top: 10px;
+	position:relative;
+	float:left;
+}
+
+#notregister a:link , #notregister a:visited   {
+	text-decoration:none;
+	color:#fff ;
+	font-size:22px;
+}
+
+#notregister a:hover {
+	text-decoration:underline ;
+}
+
+#testimonials , #welcome , #why , #news , #extra , #notregister , 
+#loginbox ,#testimonialsbox , #advantages {
+	padding:5px;
+}
+
+#testimonials 
+{
+	width:255px;
+	/*position:relative;*/
+	float:left;
+}
+#testimonials h1 {
+	background:url(../images/h1-testimonials.jpg) 0px 10px no-repeat ;
+	/*width:226px ;*/
+	height:45px;
+	margin: 0;
+	margin-bottom: 10px;
+	padding-bottom: 22px;	
+	border-bottom:2px solid #A4A16C ;
+}
+
+
+#testimonialsbox {
+	background: #F4F8DC ;
+}
+
+#extra
+{
+	width:470px;
+	position:relative;
+	float:left;
+	margin-top:-20px;
+}
+
+#extrabox
+{
+	background:#F4F8DC url(../images/laptop1_03-1_03.jpg) 100px 2px no-repeat ;
+	padding:10px ;
+	padding-bottom:25px ;
+}
+
+#extra h1
+{
+	background:url(../images/h1-services_66.jpg) 0 0 no-repeat ;
+	height: 52px ;
+	margin-bottom: 10px;
+	padding-bottom:15px;
+	border-bottom:2px solid #A4A16C ;
+	
+}
+
+#login
+{
+	width:255px;
+	/*position:relative;*/
+	float:left;
+}
+
+#loginbox {
+	padding:10px 4px 4px 10px;
+	background:#EDEBD6 ;
+	/*position:relative;*/
+}
+
+#loginbox label {
+	position:relative;
+	float:left;
+	margin-left: 2px ;
+	width:200px;
+}
+
+#login h1{
+	background:url(../images/h1-memberslogin_61.jpg) 0 0 no-repeat;
+	height:36px;
+	width:252px;
+	margin-bottom: 10px;
+	padding-bottom:15px;
+	border-bottom:2px solid #A4A16C ;
+	
+}
+#column2 {
+	width: 480px ;
+	float: left ;	
+	margin-top:10px; 
+}
+
+#welcome h1{
+	background:url(../images/h1-welcome.jpg) 0 0 no-repeat ;
+	width:496px;
+	height:63px;
+	text-align:left;
+	font:normal 27px "Times New Roman", Times, serif;
+	padding-bottom:10px;
+	position:relative ;
+}
+
+#welcome {
+	width:750px;
+	position:relative;
+}
+
+#why {
+
+}
+
+#why h1 {
+	background:url(../images/h1-why.jpg) 0 0 no-repeat ;
+	height:30px;
+}
+
+#why-listing {
+	list-style:none;
+	background:#F3F2E4 ;
+	font:normal 22px Arial, Helvetica, sans-serif;
+	color:#868A51 ;
+	padding:5px;
+	line-height:1.5em;
+}
+#why-listing li {
+	background:url(../images/arrow01.jpg) 0px 10px no-repeat;
+	padding-left: 25px;
+}
+
+#company-services 
+{
+	margin:0px auto ;
+	position:relative ;
+}
+
+#sitemap-map 
+{
+	list-style:none;
+}
+
+#sitemap-map li a
+{
+	background:url(../images/link-list01_03.jpg) 0 0 no-repeat ;
+	width:8px;
+	padding-left:20px;
+	color:#333;
+	text-decoration:none ;
+}
+
+#sitemap-map li a:hover
+{
+	text-decoration:underline;
+}
+
+#news {
+	float:left;
+	width:470px;
+}
+
+#advantages 
+{
+	width:100% ;
+	float:left ;
+}
+
+#advantagesbox
+{
+	background:#F4F8DC ;
+	float:left;
+	xwidth:460px;
+	width:95% ;
+	padding-left: 10px ; 
+	margin-top : 10px ;
+}
+
+#rightblocks
+{
+	background:#F4F8DC ;
+	float:right ;
+	position:relative ;
+	margin-top: -190px ;
+	padding-right:75px ;
+}
+
+#newsbox {
+	background:#FFFFDD;
+	float:left;
+	padding-right:5px;
+	padding-bottom:15px ;
+}
+
+#news h1 {
+	background:#FEFEEF url(../images/h1-news.jpg) 0 0  no-repeat ;
+	width:470px;
+	height:57px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;	
+	border-bottom:2px solid #A4A16C ;
+}
+
+#advantages h1
+{
+	background:#FEFEEF url(../images/h1-advant_66.jpg) 0 0  no-repeat ;
+	/*width:470px;*/
+	width:95% ;
+	height: 36px;
+	padding-bottom: 10px;	
+	border-bottom:2px solid #A4A16C ;
+}
+#news p {
+	margin-left: 5px;
+	float:left;
+	width:385px;
+}
+
+#news strong {
+	font:bold 18px Arial, Helvetica, sans-serif;
+}
+
+.viewnews-details
+{
+	width:443px;
+	float:left;
+	margin-top:10px; 
+	position:relative ;
+	padding: 0 10px 0 10px; 
+}
+
+.viewnews-details h1
+{
+
+}
+
+.news-title {
+	font:normal 25px "Times New Roman", Times, serif;
+}
+
+.posted-by {
+	margin-bottom:10px; 
+	font:normal 14px Arial, Helvetica, sans-serif;
+}
+
+.other-news
+{
+	width:280px;
+	border:2px solid #eee;
+    float:left ;
+	margin-top:10px; 
+	position: relative ;
+	padding:10px;
+	background:#FCFDFC ;
+}
+
+.other-news h1 {
+	font:normal 25px "Times New Roman", Times, serif;
+}
+
+.news-listings
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.news-listings li a {
+	background:url(../images/clipping.gif) 0 0 no-repeat ;
+	padding-left: 13px ;	
+	text-decoration:none ;
+	color:#333 ;	
+}
+
+.news-listings li a:hover  {
+	text-decoration:underline ;
+}
+/*
+.newsinfo {
+	display:block;
+	margin:0;
+margin-right:5px; 	
+	width:40px;
+	text-align:center ;
+	float: left ;
+	border:1px solid red ;
+}
+.day {
+	font:bold 40px  "Times New Roman", Times, serif;
+	color:#7F8D3E;
+	margin:0;
+	text-align:center ;
+	line-height:1em;
+	display:block ;
+}
+.month , .year {
+	font:normal 15px "Times New Roman", Times, serif;
+	margin: 0px;
+	color:#7F8D3E;
+	padding: 0px;
+	text-align:center ;
+	line-height:1em;	
+}
+*/
+div.newsinfo {
+	display: block;
+	float: left;
+	text-align:center;
+	width: 68px;
+	height: 97px;
+	margin-left:0; 
+	margin-right:5px; 
+	margin-top:0; 
+	margin-bottom:0px
+}
+
+div.newsinfo span {
+	display: block;
+	text-align: center;
+}
+
+div.newsinfo span.day {
+	font-size: 35px;
+	line-height: 30px;
+	color: #333;
+	margin-top:5px;
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+div.newsinfo span.month {
+	margin-top: 2px;
+	font-weight: bold;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom:0px;
+	line-height: 16px;
+	color: #666;
+}
+
+div.newsinfo span.year {   
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 10px;
+	font-weight: bold;
+	padding-top:3px;
+	color: #999;
+}
+
+
+
+#footer{
+	background:#621B15 url(../images/footer-bg.jpg) repeat-x ;
+	width:100%;
+	padding-top: 37px;
+	position:relative;
+	bottom:0; 
+	margin:0;   
+	height: 130px;      	
+}
+
+#contact-info {
+	padding-bottom: 30px;
+	color:#DA8801;  
+	width: 300px; 
+}
+
+#tregister td{
+	padding-bottom: 10px ;
+	font-weight:bold ;
+	text-align:left ;
+}
+
+.contact_email , .job-hiring {
+	width:400px ;
+	float:left ;
+}
+
+.contact-details
+{
+	background:url(../images/bldg-bottom_03.jpg) 0px 5px no-repeat ;
+	height:309px;
+	width:405px ;
+	margin-top:10px;
+}
+
+.contact-details , .job-open , .request-info-image  {
+	width:295px ;
+	float:left ;
+	padding-top:10px;
+}
+
+.job-open
+{
+	background:url(../images/mt-pic01_03.jpg) 0 0 no-repeat ;
+	height:228px ;
+	margin-top: 10px ;
+}
+
+.sitemap {
+	min-height:100%;
+}
+.client-testimonial , .sitemap , .signup-form {
+	width:670px ;
+	float:left ;
+	padding-top:10px;
+}
+
+.contact_email , .freetrial , .job-hiring {
+	font:normal 13px Arial, Helvetica, sans-serif;	
+	padding-top:10px;
+}
+
+
+.cap1 {
+	font:normal 15px Arial, Helvetica, sans-serif;	
+	color:#333;
+	margin:0;
+	text-align:left;
+	line-height:1.5em ;
+}
+
+.cap2 {
+	font:normal 25px "Times New Roman", Times, serif;
+	color:#333;
+	margin:0;
+}
+
+.cap3 {
+	font:normal 20px "Times New Roman", Times, serif;
+	color:#333;
+	margin:0;
+}
+
+.cap4{
+	font:bold 17px Arial, Helvetica, sans-serif;	
+	color:#333;
+	margin:0;
+}
+
+.cap5{
+	font:normal 15px Arial, Helvetica, sans-serif;	
+	color:#333;
+	margin:0;
+	line-height:1.5em ;
+}
+
+.cap6{
+	font:normal 14px Arial, Helvetica, sans-serif;
+}
+#footnav {
+	list-style:none;
+	color:#fff;
+	float: right;
+	width: 420px;
+	text-align:right ;
+}
+
+.readmore {
+	background:url(../images/readmore_06.jpg) 0 0 no-repeat;
+	width:143px;
+	height:42px;
+}
+#footnav li a {
+	color:#DA8801;  
+	font-weight:bold ;
+	padding-left:15px;
+	text-decoration:none;
+}
+
+#footnav li a:hover {
+	color:#fff;  
+	text-decoration:underline ;
+}
+
+#footnav li a.active {
+	color:#fff;
+}
+
+#footnav li {
+	float: right;
+}
+
+#contact-info h1 , #footnav , #copyright h1 {
+	font:normal 12px Arial, Helvetica, sans-serif;
+	margin:0;
+}
+
+#copyright {
+	float:right ;
+	width:400px ;
+	text-align:right ;
+	color:#DA8801;  
+	padding-top:10px;
+}
+
+#cssvalid
+{
+	float:right ;
+	width:400px ;
+	text-align:right ;
+	color:#FFB10D;  
+	padding-top:10px;
+}
+
+.submit input{
+	background:url(../images/button-bg_61.jpg) ;
+	color:#726F4B;
+	border:2px double #9E9E9E;
+	font-size: 17px;
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top:3px;
+	line-height:1em;
+}
+.submit input:active  {
+	background: #DBDBC3;
+	border: 2px double #ccc;
+	border-left-color: #999;
+	border-top-color: #999;
+}
+.clear {
+	clear: both ;
+	position:relative ;
+}
+
+.imageleft 
+{
+	float:left ;
+	border:4px solid #868A51 ;
+	margin-right:6px ;
+}
+
+.imageright
+{
+	float:right ;
+}
+
+.sign-up {
+	font:normal 18px Arial, Helvetica, sans-serif;
+}
+
+.testi-owner {
+	margin:0;
+	font-weight:bold;
+}
+.text {
+	/*color:#515151 ;*/
+	color:#333 ;
+}
+
+.linerule {
+	border-bottom:1px solid #ACA782 ;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.left {
+	float:left;
+}
+
+.spacer{
+margin-top:25px ;
+}
+
+.inputfield {
+	border:2px solid #ccc;
+	background-color:#FFFFF7;
+	font:normal 18px Verdana, Arial, Helvetica, sans-serif;
+	padding:3px;
+	margin-bottom: 7px;
+} 
+
+.passwordchar {
+
+}
+.inputfield:focus{
+	border:2px solid #333;
+	background-color: #fff;
+} 
+
+.requiredfield
+{
+	font:bold 15px Verdana, Arial, Helvetica, sans-serif;
+	color:#FF0000 ;
+}
+
+.formtextfield {
+	border:1px solid #BFB990;
+	background-color:#fff;
+	font-size:17px;
+}
+
+.invalid-password {
+	background:#BF1D1D ;
+	color:#fff ;
+	font-weight:bold ;
+	text-align:center ;
+}
+
+.notes{
+	font-size:11px;
+	line-height:1.2em;
+	width:300px;
+}
+
+.invalid_pw
+{
+	background:#C40026;
+	color:#fff;
+	text-align:center;
+	font-weight:bold;
+}
+
+.staff-item
+{
+	margin-bottom:25px ;
+}
+
+.staff-item h1 
+{
+	background:#F5F4DB ;
+	border-left:5px solid #460101 ;
+	font:normal 17px Arial, Helvetica, sans-serif ;
+	padding-left:15px ;
+}
+
+.capline
+{
+	color:#A5A36C ;
+	border-bottom:1px solid #A5A36C ;
+}
+
+.staff-item ul li , .commonlist-items
+{
+	list-style-image:url(../images/ul.gif) ;
+}
+
+.commonlist-items02
+{
+	list-style:none ;
+}
+
+.commonlist-items02 li
+{
+	background:url(../images/arrow_03.jpg ) 0 center no-repeat ;
+	padding-left:30px;
+	display:block ;
+	width:350px;
+}
+
+.bigbtn-freetrial
+{
+	background:url(../images/7daytrial_07.jpg) 0 0 no-repeat ;
+	height: 83px ;
+	width:269px ;
+	cursor:pointer ;
+	float: left ;
+}
+
+.bigbtn-register
+{
+	background:url(../images/registernow_03.jpg) 0 0 no-repeat ;
+	height: 81px ;
+	width:265px ;
+	cursor:pointer ;
+	float: left ;
+}
