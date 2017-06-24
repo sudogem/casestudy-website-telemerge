@@ -17,7 +17,7 @@ class database
   function database( $host = '' , $username = '' , $password = '' , $databasename = '' )
   {
     global $conn;
-    $this->conn = @mysql_connect( $host , $username , $password );
+    $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
     $conn = $this->conn;
     if ( !$this->conn ) die('Cannot connect to database. ');
     $db = mysql_select_db($databasename, $this->conn);
