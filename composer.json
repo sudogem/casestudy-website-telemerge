@@ -1,6 +1,6 @@
 {
   "name": "sudogem/telemerge",
-  "description": "sample web app using Native PHP + MySQL",
+  "description": "sample web app using Native PHP + MySQL 5.6.30/5.5.38",
   "type": "project",
   "license": "Free",
   "authors": [
@@ -10,6 +10,8 @@
     }
   ],
   "require": {
-    "php": "5.5.38"
+    "php": "5.5.38",
+    "ext-mysql": "*",
+    "ext-mysqli": "*"
   }
 }
