@@ -19,10 +19,8 @@ class database
     global $conn;
     $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
     $conn = $this->conn;
-
     if ( !$this->conn ) die('Cannot connect to database. ');
     $db = mysql_select_db($databasename, $this->conn);
-    print_r('dbname: '.$databasename);
     if ( !$db ) die( $this->error() );
     return $this->conn;
   }
