@@ -8,23 +8,10 @@
 // $conf['dbdatabasename'] = 'teletrandb';
 
 // for live site
-// $conf['dbhost'] = $_ENV["DB_CLEARDB_HOST"];
-if (isset($_ENV["VCAP_SERVICES"])) {
-  print 'VCAP_SERVICES: ';
-  print_r($_ENV["VCAP_SERVICES"]);
-}
-$a =getenv("DB_CLEARDB_HOST");
-print 'x1: ';
-print $a;
-$b = isset($_ENV["DB_CLEARDB_USERNAME"]) ? $_ENV["DB_CLEARDB_USERNAME"]: 'none x2';
-print '<br>x2: ';
-print $b;
-// $conf['dbusername'] = $_ENV["DB_CLEARDB_USERNAME"];
-// $conf['dbusername'] = getenv("DB_CLEARDB_USERNAME");
-$conf['dbhost'] = 'us-cdbr-sl-dfw-01.cleardb.net';
-$conf['dbusername'] = 'b7616571a16ba9';
-$conf['dbpassword'] = 'b946dcbc';
-$conf['dbdatabasename'] = 'ibmx_98f1ba724131160';
+$conf['dbhost'] = isset($_ENV["DB_CLEARDB_HOST"]) ? $_ENV["DB_CLEARDB_HOST"]: 'localhost';
+$conf['dbusername'] = isset($_ENV["DB_CLEARDB_USERNAME"]) ? $_ENV["DB_CLEARDB_USERNAME"]: 'root';
+$conf['dbpassword'] = isset($_ENV["DB_CLEARDB_PASSWORD"]) ? $_ENV["DB_CLEARDB_PASSWORD"]: 'webdevel';
+$conf['dbdatabasename'] = isset($_ENV["DB_CLEARDB_DBNAME"]) ? $_ENV["DB_CLEARDB_DBNAME"]: 'teletrandb';
 // max file size allocated
 $conf['max_voicefile_upload'] = 2000000 ;
 // mail
