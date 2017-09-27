@@ -54,8 +54,8 @@ require_once ( 'sysfunctions/sysfunc.php' );
 require_once ( 'libraries/class.database.php' );
 require_once ( 'libraries/class.sanitizer.php' );
 require_once ( 'libraries/class.client_testimonials.php' );
-require_once ( 'web/class.sessions.php' );
-require_once ( 'web/class.request.php' );
+require_once ( 'http/class.sessions.php' );
+require_once ( 'http/class.request.php' );
 
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
 

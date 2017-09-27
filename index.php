@@ -1,25 +1,15 @@
 <?php
 
-require_once ( 'config/conf.php' );
-
-require_once ( 'config/constants.php' );
-
-require_once ( 'sysfunctions/sysfunc.php' );
-
-require_once ( 'web/class.sessions.php' );
-
-require_once ( 'libraries/class.database.php' );
-
-require_once ( 'libraries/class.client_testimonials.php' );
-
-require_once ( 'libraries/class.useraccount.php' );
-
-require_once ( 'libraries/class.articles.php' );
-
-
+require_once (__DIR__ . '/config/conf.php' );
+require_once (__DIR__ . '/config/constants.php' );
+require_once (__DIR__ . '/sysfunctions/sysfunc.php' );
+require_once (__DIR__ . '/http/class.sessions.php' );
+require_once (__DIR__ . '/libraries/class.database.php' );
+require_once (__DIR__ . '/libraries/class.client_testimonials.php' );
+require_once (__DIR__ . '/libraries/class.useraccount.php' );
+require_once (__DIR__ . '/libraries/class.articles.php' );
 
 $session = new sessions();
-
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
 
 

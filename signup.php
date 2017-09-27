@@ -2,7 +2,7 @@
 require_once ( 'libraries/class.countries.php' );
 require_once ( 'libraries/class.captcha_numbers.php' );
 require_once ( 'libraries/class.sanitizer.php' );
-require_once ( 'web/class.sessions.php' );
+require_once ( 'http/class.sessions.php' );
 
 $session = new sessions();
 $myts =& textsanitizer::getInstance();

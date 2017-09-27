@@ -1,5 +1,5 @@
 <?php
-require_once ( '../web/class.sessions.php' );
+require_once ( '../http/class.sessions.php' );
 $session = new sessions();
 
 if ( $session->isAttributeExist( 'account_sess' ) === false )

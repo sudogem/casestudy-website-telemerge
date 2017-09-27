@@ -8,7 +8,7 @@
 	require_once ( '../libraries/class.uploads.php' );
 	require_once ( '../libraries/class.validator.php' );
 	require_once ( '../libraries/class.httpdownload.php' );
-	require_once ( '../web/class.sessions.php' );
+	require_once ( '../http/class.sessions.php' );
 
 	$object = new httpdownload;
 	$path = '../uploads/audio_files/'; 

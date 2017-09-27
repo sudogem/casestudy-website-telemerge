@@ -1,5 +1,5 @@
 <?php
-	require_once ( 'web/class.sessions.php' );
+	require_once ( 'http/class.sessions.php' );
 	require_once ( 'config/conf.php' );
 	require_once ( 'libraries/class.sanitizer.php' ) ;
 	

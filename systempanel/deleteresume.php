@@ -3,7 +3,7 @@
 	require_once ( '../config/constants.php' );	
 	require_once ( '../libraries/class.database.php' );
 	require_once ( '../libraries/class.resume.php' );
-	require_once ( '../web/class.sessions.php' );
+	require_once ( '../http/class.sessions.php' );
 	
 	$db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
 	$session = new sessions();

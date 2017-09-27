@@ -2,7 +2,7 @@
 	require_once ( 'libraries/class.phpmailer.php' );
 	require_once ( 'libraries/class.httpupload.php' );
 	require_once ( 'libraries/class.database.php' );
-	require_once ( 'web/class.sessions.php' );
+	require_once ( 'http/class.sessions.php' );
 	require_once ( 'libraries/class.resume.php' );
 	require_once ( 'libraries/class.sanitizer.php' );
 	require_once ( 'libraries/class.validator.php' );

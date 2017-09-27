@@ -10,7 +10,7 @@ require_once ( '../libraries/class.useraccount.php' );
 require_once ( '../libraries/class.articles.php' );
 require_once ( '../libraries/class.validator.php' );
 require_once ( '../libraries/class.phpmailer.php' );
-require_once ( '../web/class.sessions.php' );
+require_once ( '../http/class.sessions.php' );
 
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
 

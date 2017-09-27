@@ -2,7 +2,7 @@
 	require_once ( 'libraries/class.phpmailer.php' );
 	require_once ( 'libraries/class.validator.php' );
 	require_once ( 'sysfunctions/sysfunc.php' );
-	require_once ( 'web/class.sessions.php' );
+	require_once ( 'http/class.sessions.php' );
 	require_once ( 'config/conf.php' );
 	
 	//print_r($_POST);

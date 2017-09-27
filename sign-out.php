@@ -1,6 +1,6 @@
 <?php
 
-require_once ( 'web/class.sessions.php' );
+require_once ( 'http/class.sessions.php' );
 require_once ( 'config/constants.php' );
 
 $session = new sessions ;

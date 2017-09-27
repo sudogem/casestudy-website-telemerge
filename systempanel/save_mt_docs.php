@@ -8,7 +8,7 @@
 	require_once ( '../libraries/class.transcribed_docs.php' );
 	require_once ( '../libraries/class.validator.php' );
 	require_once ( '../libraries/class.httpupload.php' );
-	require_once ( '../web/class.sessions.php' );
+	require_once ( '../http/class.sessions.php' );
 	
 	$db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
 	$session = new sessions();

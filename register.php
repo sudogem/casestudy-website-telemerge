@@ -3,7 +3,7 @@ require_once ( 'libraries/class.validator.php' ) ;
 require_once ( 'libraries/class.database.php' ) ;
 require_once ( 'libraries/class.sanitizer.php' ) ;
 require_once ( 'libraries/class.useraccount.php' ) ;
-require_once ( 'web/class.sessions.php' );
+require_once ( 'http/class.sessions.php' );
 require_once ( 'config/conf.php' );
 
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
