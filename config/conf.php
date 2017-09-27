@@ -39,7 +39,6 @@ if (isset($_ENV["DB_CLEARDB_HOST"])) { // If using IBM Bluemix ClearDB
 }
 
 $conf['dbhost'] = isset($DB_HOST_DEV) ? $DB_HOST_DEV: $DB_HOST_PROD;
-$conf['dbport'] = isset($DB_PORT_DEV) ? $DB_PORT_DEV: $DB_PORT_PROD;
 $conf['dbusername'] = isset($DB_USER_DEV) ? $DB_USER_DEV: $DB_USER_PROD;
 $conf['dbpassword'] = isset($DB_PASS_DEV) ? $DB_PASS_DEV: $DB_PASS_PROD;
 $conf['dbdatabasename'] = isset($DB_DBNAME_DEV) ? $DB_DBNAME_DEV: $DB_DBNAME_PROD;
@@ -52,3 +51,7 @@ $conf['mail_c_to'] = 'support@telemerge.com';
 $conf['mail_c_subject'] = 'Telemerge Contact Us Form';
 $conf['mail_freetrial_to'] = 'support@telemerge.com';
 $conf['mail_freetrial_subject'] = 'Telemerge Free Trial Form';
+
+echo "<pre>";
+print_r($conf);
+echo "</pre>";
