@@ -44,15 +44,15 @@ class database
     {
       // $this->query_result = mysql_query($sql, $conn);
       $this->query_result = mysqli_query($conn, $sql);
-      if ( !$this->query_result )
-      {
-        //die( $this->error() );
-        return false;
-      }
-      else
-      {
-        return true;
-      }
+      return $this->query_result;
+      // if ( !$this->query_result )
+      // {
+      //   return false;
+      // }
+      // else
+      // {
+      //   return true;
+      // }
     }
   }
 
@@ -89,7 +89,7 @@ class database
     global $conn;
     if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
-    $this->row = mysqli_fetch_object($resourceid);
+    $this->row = mysqli_fetch_object($this->query_result);
     return $this->row;
   }
 
@@ -122,7 +122,7 @@ class database
   {
     if ( !$result ) $result = $this->query_result;
     // return mysql_num_rows( $result );
-    return mysqli_num_rows( $result );
+    return mysqli_num_rows($this->query_result);
   }
 
   function close() {

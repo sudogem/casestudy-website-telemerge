@@ -52,6 +52,6 @@ $conf['mail_c_subject'] = 'Telemerge Contact Us Form';
 $conf['mail_freetrial_to'] = 'support@telemerge.com';
 $conf['mail_freetrial_subject'] = 'Telemerge Free Trial Form';
 
-echo "<pre>";
+echo "<pre style='display:none'>";
 print_r($conf);
 echo "</pre>";
