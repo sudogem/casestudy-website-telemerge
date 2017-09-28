@@ -6,7 +6,7 @@
 
 class database
 {
-  var $conn;
+  public $conn;
   var $host = '' ;
   var $username = '' ;
   var $password = '' ;
@@ -16,9 +16,12 @@ class database
    */
   function database( $host = '' , $username = '' , $password = '' , $databasename = '' )
   {
-    global $conn;
+    // global $conn;
     // $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
     $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die('mysqli_connect:' . mysql_error());
+    print '<br><br>';
+    print_r('database() $this->conn: ');
+    print_r($this->conn);
     $conn = $this->conn;
     if ( !$this->conn ) die('Cannot connect to database. ');
     // $db = mysql_select_db($databasename, $this->conn);
@@ -39,14 +42,20 @@ class database
    */
   function query( $sql )
   {
-    global $conn;
+    // global $conn;
     if ( $sql != '' )
     {
       // $this->query_result = mysql_query($sql, $conn);
+      print '<br><br>';
+      print_r('query() $this->conn: ');
+      print_r($this->conn);
       $this->query_result = mysqli_query($this->conn, $sql);
       print '<br><br>';
       print_r('query() $this->query_result: ');
       print_r($this->query_result);
+      print '<br><br>';
+      // print_r('query() $conn: ');
+      // print_r($conn);
       print '<br><br>';
       print_r('query() $this->conn: ');
       print_r($this->conn);
@@ -92,7 +101,7 @@ class database
    */
   function fetchobject( $resourceid = 0 )
   {
-    global $conn;
+    // global $conn;
     if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
     $this->row = mysqli_fetch_object($resourceid);

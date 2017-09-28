@@ -9,6 +9,8 @@ require_once (__DIR__ . '/libraries/class.useraccount.php' );
 require_once (__DIR__ . '/libraries/class.articles.php' );
 $session = new sessions();
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
+print_r('<br><br>db: ');
+print_r($db);
 $testi = new clientTestimonials;
 $account = new userAccount;
 $newsarticles = new NewsArticles ;
