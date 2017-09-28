@@ -44,6 +44,9 @@ class database
     {
       // $this->query_result = mysql_query($sql, $conn);
       $this->query_result = mysqli_query($conn, $sql);
+      print '<br><br>';
+      print_r('query() $this->query_result: ');
+      print_r($this->query_result);
       return $this->query_result;
       // if ( !$this->query_result )
       // {
@@ -64,7 +67,7 @@ class database
       if ( $type == 'OBJECT' )
       {
         $result = $this->query( $sql );
-        while( $row = $this->fetchobject( ) )
+        while( $row = $this->fetchobject($result) )
         {
           $buffered_data[] = $row ;
         }
@@ -89,11 +92,11 @@ class database
     global $conn;
     if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
-    $this->row = mysqli_fetch_object($this->query_result);
-    print_r('fetchobject resourceid: ');
+    $this->row = mysqli_fetch_object($resourceid);
+    print_r('fetchobject() resourceid: ');
     print_r($resourceid);
     print '<br><br>';
-    print_r('fetchobject $this->query_result: ');
+    print_r('fetchobject() $this->query_result: ');
     print_r($this->query_result);
     return $this->row;
   }
