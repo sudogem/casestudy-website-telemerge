@@ -43,10 +43,13 @@ class database
     if ( $sql != '' )
     {
       // $this->query_result = mysql_query($sql, $conn);
-      $this->query_result = mysqli_query($conn, $sql);
+      $this->query_result = mysqli_query($this->conn, $sql);
       print '<br><br>';
       print_r('query() $this->query_result: ');
       print_r($this->query_result);
+      print '<br><br>';
+      print_r('query() $this->conn: ');
+      print_r($this->conn);
       return $this->query_result;
       // if ( !$this->query_result )
       // {
