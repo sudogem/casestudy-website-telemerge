@@ -18,7 +18,7 @@ class database
   {
     global $conn;
     // $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
-    $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die(mysql_error());
+    $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die('mysqli_connect:' . mysql_error());
     $conn = $this->conn;
     if ( !$this->conn ) die('Cannot connect to database. ');
     // $db = mysql_select_db($databasename, $this->conn);
@@ -90,6 +90,11 @@ class database
     if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
     $this->row = mysqli_fetch_object($this->query_result);
+    print_r('fetchobject resourceid: ');
+    print_r($resourceid);
+    print '<br><br>';
+    print_r('fetchobject $this->query_result: ');
+    print_r($this->query_result);
     return $this->row;
   }
 
