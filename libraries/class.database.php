@@ -40,25 +40,26 @@ class database
   /**
    * performs a sql query
    */
-  function query( $sql )
+  function query($conn, $sql )
   {
     // global $conn;
     if ( $sql != '' )
     {
       // $this->query_result = mysql_query($sql, $conn);
+      // print '<br><br>';
+      // print_r('query() $this->conn: ');
+      // print_r($this->conn);
       print '<br><br>';
-      print_r('query() $this->conn: ');
-      print_r($this->conn);
-      $this->query_result = mysqli_query($this->conn, $sql);
+      print_r('query() $conn: ');
+      print_r($conn->conn);
+      $this->query_result = mysqli_query($conn->conn, $sql);
       print '<br><br>';
       print_r('query() $this->query_result: ');
       print_r($this->query_result);
-      print '<br><br>';
-      // print_r('query() $conn: ');
-      // print_r($conn);
-      print '<br><br>';
-      print_r('query() $this->conn: ');
-      print_r($this->conn);
+
+      // print '<br><br>';
+      // print_r('query() $this->conn: ');
+      // print_r($this->conn);
       return $this->query_result;
       // if ( !$this->query_result )
       // {
@@ -71,14 +72,14 @@ class database
     }
   }
 
-  function buffered_query( $sql , $type = 'OBJECT' )
+  function buffered_query($conn, $sql , $type = 'OBJECT' )
   {
     if ( $sql != '' )
     {
       $buffered_data = array( );
       if ( $type == 'OBJECT' )
       {
-        $result = $this->query( $sql );
+        $result = $this->query($conn, $sql );
         while( $row = $this->fetchobject($result) )
         {
           $buffered_data[] = $row ;

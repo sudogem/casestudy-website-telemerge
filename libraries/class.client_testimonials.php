@@ -117,7 +117,7 @@ class clientTestimonials extends database
 		return $testidata ; 		
 	}
 	
-	function getPublishedClientTestimonials( $num = 0 )
+	function getPublishedClientTestimonials($conn, $num = 0 )
 	{
 		$sql = " select * from $this->table_testimonial " ;
 		$sql .= " where status = 2 ";		
@@ -125,7 +125,7 @@ class clientTestimonials extends database
 		if ( $num != 0 ) $sql .= " limit $num ";		
 
 		$testidata = array( );
-		$testidata = $this->buffered_query( $sql );		
+		$testidata = $this->buffered_query($conn, $sql );		
 		return $testidata ; 		
 	}
 	function getTestimonialsByLimit( $limit , $offset )
