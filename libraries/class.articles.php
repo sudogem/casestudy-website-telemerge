@@ -133,8 +133,8 @@ class NewsArticles extends database
 		if ( $num != 0 ) $sql .= " limit $num ";
 		$result = $this->query($conn, $sql );
 		$articledata = array();
-		while( $row = $this->fetchobject() ) $articledata[] = $row; 
-		if ( $this->getnumrows() > 0 )
+		while( $row = $this->fetchobject($result) ) $articledata[] = $row; 
+		if ( $this->getnumrows($result) > 0 )
 			return $this->formatArticleResultSet( $articledata );
 		else return null;		
 	}
