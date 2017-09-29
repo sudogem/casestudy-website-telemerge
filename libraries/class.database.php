@@ -7,6 +7,7 @@
 class database
 {
   public $conn;
+  public $query_result;
   var $host = '' ;
   var $username = '' ;
   var $password = '' ;
@@ -53,10 +54,9 @@ class database
       print_r('query() $conn: ');
       print_r($conn->conn);
       $this->query_result = mysqli_query($conn->conn, $sql);
-      print '<br><br>';
-      print_r('query() $this->query_result: ');
-      print_r($this->query_result);
-
+      // print '<br><br>';
+      // print_r('query() $this->query_result: ');
+      // print_r($this->query_result);
       // print '<br><br>';
       // print_r('query() $this->conn: ');
       // print_r($this->conn);
@@ -103,14 +103,14 @@ class database
   function fetchobject( $resourceid = 0 )
   {
     // global $conn;
-    if ( !$resourceid ) $resourceid = $this->query_result;
+    // if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
     $this->row = mysqli_fetch_object($resourceid);
+    print '<br><br>';
     print_r('fetchobject() resourceid: ');
     print_r($resourceid);
-    print '<br><br>';
-    print_r('fetchobject() $this->query_result: ');
-    print_r($this->query_result);
+    // print_r('fetchobject() $this->query_result: ');
+    // print_r($this->query_result);
     return $this->row;
   }
 
