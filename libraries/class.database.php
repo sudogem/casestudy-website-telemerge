@@ -51,16 +51,17 @@ class database
       // print_r('query() $this->conn: ');
       // print_r($this->conn);
       print '<br><br>';
-      print_r('query() $conn: ');
+      print_r('QUERY() $CONN: ');
       print_r($conn->conn);
-      $this->query_result = mysqli_query($conn->conn, $sql);
-      // print '<br><br>';
-      // print_r('query() $this->query_result: ');
-      // print_r($this->query_result);
+      print_r('<br>SQL:' . $sql);
+      $query_result = mysqli_query($conn->conn, $sql);
+      print '<br><br>';
+      print_r('QUERY() $QUERY_RESULT: ');
+      print_r($query_result);
       // print '<br><br>';
       // print_r('query() $this->conn: ');
       // print_r($this->conn);
-      return $this->query_result;
+      return $query_result;
       // if ( !$this->query_result )
       // {
       //   return false;
