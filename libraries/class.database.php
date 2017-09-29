@@ -1,28 +1,25 @@
 <?php
 /**
- * @author		Arman Ortega
- * @created		Dec 30 2006
+ * @author    Arman Ortega
+ * @created   Dec 30 2006
  */
 
 class database
 {
-  public $conn;
-  public $query_result;
+  var $conn;
   var $host = '' ;
   var $username = '' ;
   var $password = '' ;
   var $databasename = '' ;
+  public $query_result;
   /**
    * connect to the database
    */
   function database( $host = '' , $username = '' , $password = '' , $databasename = '' )
   {
-    // global $conn;
+    global $conn;
     // $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
-    $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die('mysqli_connect:' . mysql_error());
-    print '<br><br>';
-    print_r('database() $this->conn: ');
-    print_r($this->conn);
+    $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die(mysql_error());
     $conn = $this->conn;
     if ( !$this->conn ) die('Cannot connect to database. ');
     // $db = mysql_select_db($databasename, $this->conn);
@@ -41,29 +38,17 @@ class database
   /**
    * performs a sql query
    */
-  function query($conn, $sql )
+  function query( $sql )
   {
-    // global $conn;
+    global $conn;
     if ( $sql != '' )
     {
       // $this->query_result = mysql_query($sql, $conn);
-      // print '<br><br>';
-      // print_r('query() $this->conn: ');
-      // print_r($this->conn);
-      print '<br><br>';
-      print_r('QUERY() $CONN: ');
-      print_r($conn->conn);
-      print_r('<br>SQL:' . $sql);
-      $query_result = mysqli_query($conn->conn, $sql);
-      print '<br><br>';
-      print_r('QUERY() $QUERY_RESULT: ');
-      print_r($query_result);
-      // print '<br><br>';
-      // print_r('query() $this->conn: ');
-      // print_r($this->conn);
-      return $query_result;
+      $this->query_result = mysqli_query($conn, $sql);
+      return $this->query_result;
       // if ( !$this->query_result )
       // {
+      //   //die( $this->error() );
       //   return false;
       // }
       // else
@@ -73,14 +58,14 @@ class database
     }
   }
 
-  function buffered_query($conn, $sql , $type = 'OBJECT' )
+  function buffered_query( $sql , $type = 'OBJECT' )
   {
     if ( $sql != '' )
     {
       $buffered_data = array( );
       if ( $type == 'OBJECT' )
       {
-        $result = $this->query($conn, $sql );
+        $result = $this->query( $sql );
         while( $row = $this->fetchobject($result) )
         {
           $buffered_data[] = $row ;
@@ -103,15 +88,9 @@ class database
    */
   function fetchobject( $resourceid = 0 )
   {
-    // global $conn;
-    // if ( !$resourceid ) $resourceid = $this->query_result;
+    if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
     $this->row = mysqli_fetch_object($resourceid);
-    print '<br><br>';
-    print_r('fetchobject() resourceid: ');
-    print_r($resourceid);
-    // print_r('fetchobject() $this->query_result: ');
-    // print_r($this->query_result);
     return $this->row;
   }
 
@@ -144,7 +123,7 @@ class database
   {
     if ( !$result ) $result = $this->query_result;
     // return mysql_num_rows( $result );
-    return mysqli_num_rows($this->query_result);
+    return mysqli_num_rows( $result );
   }
 
   function close() {

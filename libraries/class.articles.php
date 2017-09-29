@@ -125,16 +125,16 @@ class NewsArticles extends database
 		return $data;
 	}
 	
-	function getAllPublishedArticles($conn, $num = 0 )
+	function getAllPublishedArticles( $num = 0 )
 	{
 		$sql = " select * from $this->table_articles ";
 		$sql .= " where status = '2' ";
 		$sql .= " order by datecreated desc ";
 		if ( $num != 0 ) $sql .= " limit $num ";
-		$result = $this->query($conn, $sql );
+		$result = $this->query( $sql );
 		$articledata = array();
-		while( $row = $this->fetchobject($result) ) $articledata[] = $row; 
-		if ( $this->getnumrows($result) > 0 )
+		while( $row = $this->fetchobject() ) $articledata[] = $row;
+		if ( $this->getnumrows() > 0 )
 			return $this->formatArticleResultSet( $articledata );
 		else return null;		
 	}

@@ -9,12 +9,10 @@ require_once (__DIR__ . '/libraries/class.useraccount.php' );
 require_once (__DIR__ . '/libraries/class.articles.php' );
 $session = new sessions();
 $db = new database ( $conf['dbhost'] , $conf['dbusername'] , $conf['dbpassword'] , $conf['dbdatabasename'] );
-print_r('<br><br>db: ');
-print_r($db);
 $testi = new clientTestimonials;
 $account = new userAccount;
 $newsarticles = new NewsArticles ;
-$client_testi = $testi->getPublishedClientTestimonials($db, 1 );
+$client_testi = $testi->getPublishedClientTestimonials( 1 );
 //echo count($result)-1;
 // print_r($result);
 ?>
@@ -144,7 +142,7 @@ if ($session->getAttribute( 'login_error' ) )
     <h1><span>News and Events</span></h1>
     <div id="newsbox" >
 <?php
-$publishednews = $newsarticles->getAllPublishedArticles($db, 2);
+$publishednews = $newsarticles->getAllPublishedArticles(2);
 //print_r($publishednews);
   $n = count( $publishednews );
   for($i=0 ; $i < $n ; $i++ )
