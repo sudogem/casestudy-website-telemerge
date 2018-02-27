@@ -22,6 +22,12 @@ if (isset($_ENV["DB_HOST_DEV"])) {
   $DB_USER_DEV = isset($_ENV["DB_USER_DEV"]) ? $_ENV["DB_USER_DEV"] : DB_USER_DEV;
   $DB_PASS_DEV = isset($_ENV["DB_PASS_DEV"]) ? $_ENV["DB_PASS_DEV"] : DB_PASS_DEV;
   $DB_DBNAME_DEV = isset($_ENV["DB_DBNAME_DEV"]) ? $_ENV["DB_DBNAME_DEV"] : DB_DBNAME_DEV;
+} else {
+  $DB_HOST_DEV = DB_HOST_DEV;
+  $DB_PORT_DEV = DB_PORT_DEV;
+  $DB_USER_DEV = DB_USER_DEV;
+  $DB_PASS_DEV = DB_PASS_DEV;
+  $DB_DBNAME_DEV = DB_DBNAME_DEV;
 }
 
 if (isset($_ENV["DB_CLEARDB_HOST"])) { // If using IBM Bluemix ClearDB
