@@ -14,7 +14,7 @@ class textSanitizer {
 		// so far nothing here ..
 	} 
 	
-	function &getInstance ( ) 
+	public static function &getInstance ( ) 
 	{
 		static $instance;
 		if ( !isset( $instance ) ) {
