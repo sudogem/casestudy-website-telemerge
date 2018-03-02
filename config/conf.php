@@ -2,18 +2,25 @@
 // database configuration
 // change the settings below that will match in your mysql database server
 
-// $conf['dbhost'] = 'localhost';
-// $conf['dbusername'] = 'root';
-// $conf['dbpassword'] = 'webdevel' ;
-// $conf['dbdatabasename'] = 'teletrandb';
-
 date_default_timezone_set("Asia/Manila");
 
-define('DB_HOST_DEV', 'localhost');
-define('DB_PORT_DEV', '3306'); 
-define('DB_USER_DEV', 'root');
-define('DB_PASS_DEV', 'webdevel');
 define('DB_DBNAME_DEV', 'teletrandb');
+
+// Note: Uncomment the db provider
+// define('DB_PROVIDER', 'mysql');
+define('DB_PROVIDER', 'postgres');
+
+if(DB_PROVIDER == 'mysql') {
+  define('DB_HOST_DEV', 'localhost');
+  define('DB_PORT_DEV', '3306');
+  define('DB_USER_DEV', 'root');
+  define('DB_PASS_DEV', 'webdevel');
+} else {
+  define('DB_HOST_DEV', '192.168.99.101');
+  define('DB_PORT_DEV', '5432');
+  define('DB_USER_DEV', 'bob');
+  define('DB_PASS_DEV', 'webdevel');
+}
 
 if (isset($_ENV["DB_HOST_DEV"])) {
   // $DB_HOST_DEV = $_ENV["DB_HOST_DEV"] || DB_HOST_DEV; // it wont work like this!

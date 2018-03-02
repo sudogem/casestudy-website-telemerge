@@ -19,11 +19,20 @@ class database
   {
     global $conn;
     // $this->conn = mysql_connect( $host , $username , $password ) or die(mysql_error());
-    $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die(mysql_error());
-    $conn = $this->conn;
-    if ( !$this->conn ) die('Cannot connect to database. ');
-    // $db = mysql_select_db($databasename, $this->conn);
-    // if ( !$db ) die( $this->error() );
+    switch(DB_PROVIDER){
+      case 'mysql':
+        $this->conn = mysqli_connect( $host , $username , $password, $databasename) or die(mysql_error());
+        $conn = $this->conn;
+        if ( !$this->conn ) die('Cannot connect to database. ');
+        // $db = mysql_select_db($databasename, $this->conn);
+        // if ( !$db ) die( $this->error() );
+      break;
+      case 'postgres':
+        $this->conn = pg_connect("host=$host port=5432 user=$username password=$password dbname=$databasename");
+        $conn = $this->conn;
+      break;
+    }
+
     return $this->conn;
   }
 
@@ -44,17 +53,25 @@ class database
     if ( $sql != '' )
     {
       // $this->query_result = mysql_query($sql, $conn);
-      $this->query_result = mysqli_query($conn, $sql);
-      return $this->query_result;
-      // if ( !$this->query_result )
-      // {
-      //   //die( $this->error() );
-      //   return false;
-      // }
-      // else
-      // {
-      //   return true;
-      // }
+      switch(DB_PROVIDER){
+        case 'mysql':
+          $this->query_result = mysqli_query($conn, $sql);
+          return $this->query_result;
+          // if ( !$this->query_result )
+          // {
+          //   //die( $this->error() );
+          //   return false;
+          // }
+          // else
+          // {
+          //   return true;
+          // }
+        break;
+        case 'postgres':
+          $this->query_result = pg_query($conn, $sql);
+          return $this->query_result;
+        break;
+      }
     }
   }
 
@@ -90,8 +107,16 @@ class database
   {
     if ( !$resourceid ) $resourceid = $this->query_result;
     // $this->row = mysql_fetch_object( $resourceid );
-    $this->row = mysqli_fetch_object($resourceid);
-    return $this->row;
+      switch(DB_PROVIDER){
+        case 'mysql':
+          $this->row = mysqli_fetch_object($resourceid);
+          return $this->row;
+        break;
+        case 'postgres':
+          $this->row = pg_fetch_object($resourceid);
+          return $this->row;
+        break;
+      }
   }
 
 
@@ -123,7 +148,15 @@ class database
   {
     if ( !$result ) $result = $this->query_result;
     // return mysql_num_rows( $result );
-    return mysqli_num_rows( $result );
+      switch(DB_PROVIDER){
+        case 'mysql':
+          return mysqli_num_rows( $result );
+        break;
+
+        case 'postgres':
+          return pg_num_rows( $result );
+        break;
+      }
   }
 
   function close() {
