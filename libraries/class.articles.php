@@ -196,7 +196,7 @@ class NewsArticles extends database
 			for( $i=0 ; $i < $n ; $i++ )
 			{
 				$article = new NewsArticles();
-				$article->setnewsID( $result[$i]->newsID );
+				$article->setnewsID( $result[$i]->newsid );
 				$article->setArticleNewstitle( $result[$i]->newstitle );
 				$article->setArticleBody(  $result[$i]->newsdesc ); 
 				$article->setArticleDateCreated( $result[$i]->datecreated );

@@ -16,7 +16,7 @@ if(DB_PROVIDER == 'mysql') {
   define('DB_USER_DEV', 'root');
   define('DB_PASS_DEV', 'webdevel');
 } else {
-  define('DB_HOST_DEV', '192.168.99.101');
+  define('DB_HOST_DEV', '192.168.99.100');
   define('DB_PORT_DEV', '5432');
   define('DB_USER_DEV', 'bob');
   define('DB_PASS_DEV', 'webdevel');
@@ -49,8 +49,13 @@ if (isset($_ENV["DB_CLEARDB_HOST"])) { // If using IBM Bluemix ClearDB
   $DB_USER_PROD = $_ENV["OPENSHIFT_MYSQL_DB_USERNAME"];
   $DB_PASS_PROD = $_ENV["OPENSHIFT_MYSQL_DB_PASSWORD"];
   $DB_DBNAME_PROD = $_ENV["OPENSHIFT_MYSQL_DB_DBNAME"];
+} else if(isset($_ENV["HEROKU_POSTGRES_DB_HOST"])) { // If using Heroku Postgres
+  $DB_HOST_PROD = $_ENV["HEROKU_POSTGRES_DB_HOST"];
+  $DB_PORT_PROD = $_ENV["HEROKU_POSTGRES_DB_PORT"];
+  $DB_USER_PROD = $_ENV["HEROKU_POSTGRES_DB_USERNAME"];
+  $DB_PASS_PROD = $_ENV["HEROKU_POSTGRES_DB_PASSWORD"];
+  $DB_DBNAME_PROD = $_ENV["HEROKU_POSTGRES_DB_DBNAME"];
 }
-
 $conf['dbhost'] = isset($DB_HOST_DEV) ? $DB_HOST_DEV: $DB_HOST_PROD;
 $conf['dbusername'] = isset($DB_USER_DEV) ? $DB_USER_DEV: $DB_USER_PROD;
 $conf['dbpassword'] = isset($DB_PASS_DEV) ? $DB_PASS_DEV: $DB_PASS_PROD;
