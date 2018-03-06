@@ -16,13 +16,13 @@ if(DB_PROVIDER == 'mysql') {
   define('DB_USER_DEV', 'root');
   define('DB_PASS_DEV', 'webdevel');
 } else {
-  define('DB_HOST_DEV', '192.168.99.100');
+  define('DB_HOST_DEV', '192.168.99.100'); // docker host ip
   define('DB_PORT_DEV', '5432');
   define('DB_USER_DEV', 'bob');
   define('DB_PASS_DEV', 'webdevel');
 }
 
-if (isset($_ENV["DB_HOST_DEV"])) {
+if (isset($_ENV["TEL_APP_ENV"]) && ($_ENV["TEL_APP_ENV"] == 'development')) {
   // $DB_HOST_DEV = $_ENV["DB_HOST_DEV"] || DB_HOST_DEV; // it wont work like this!
   $DB_HOST_DEV = isset($_ENV["DB_HOST_DEV"]) ? $_ENV["DB_HOST_DEV"] : DB_HOST_DEV;
   $DB_PORT_DEV = isset($_ENV["DB_PORT_DEV"]) ? $_ENV["DB_PORT_DEV"] : DB_PORT_DEV;
@@ -56,10 +56,11 @@ if (isset($_ENV["DB_CLEARDB_HOST"])) { // If using IBM Bluemix ClearDB
   $DB_PASS_PROD = $_ENV["HEROKU_POSTGRES_DB_PASSWORD"];
   $DB_DBNAME_PROD = $_ENV["HEROKU_POSTGRES_DB_DBNAME"];
 }
-$conf['dbhost'] = isset($DB_HOST_DEV) ? $DB_HOST_DEV: $DB_HOST_PROD;
-$conf['dbusername'] = isset($DB_USER_DEV) ? $DB_USER_DEV: $DB_USER_PROD;
-$conf['dbpassword'] = isset($DB_PASS_DEV) ? $DB_PASS_DEV: $DB_PASS_PROD;
-$conf['dbdatabasename'] = isset($DB_DBNAME_DEV) ? $DB_DBNAME_DEV: $DB_DBNAME_PROD;
+
+$conf['dbhost'] = isset($_ENV["TEL_APP_ENV"]) && ($_ENV["TEL_APP_ENV"] === 'development') ? $DB_HOST_DEV: $DB_HOST_PROD;
+$conf['dbusername'] = isset($_ENV["TEL_APP_ENV"]) && ($_ENV["TEL_APP_ENV"] === 'development') ? $DB_USER_DEV: $DB_USER_PROD;
+$conf['dbpassword'] = isset($_ENV["TEL_APP_ENV"]) && ($_ENV["TEL_APP_ENV"] === 'development') ? $DB_PASS_DEV: $DB_PASS_PROD;
+$conf['dbdatabasename'] = isset($_ENV["TEL_APP_ENV"]) && ($_ENV["TEL_APP_ENV"] === 'development') ? $DB_DBNAME_DEV: $DB_DBNAME_PROD;
 
 // max file size allocated
 $conf['max_voicefile_upload'] = 2000000 ;
